@@ -1,0 +1,26 @@
+<div class="chat-page-container">
+    <div class="chat-box">
+      <h2>Generador de Productos con IA</h2>
+      <p class="sub-text">Describe el producto y obtén una imagen y descripción generada automáticamente.</p>
+  
+      <input class="input-description" type="text" placeholder="Ingresa la descripción del producto" >
+      <button class="send-btn" (click)="sendDescription()">Enviar</button>
+  
+      <div *ngIf="loading" class="loading-spinner"></div>
+  
+      <div *ngIf="hasResults" class="result-container">
+        <div class="text-result">
+          <h3>Descripción Generada:</h3>
+          <p>{{ textoDevuelto }}</p>
+        </div>
+  
+        <div class="image-result">
+          <h3>Imagen Generada:</h3>
+          <img [src]="imagenDevuelta" alt="Imagen generada" class="generated-image">
+        </div>
+      </div>
+  
+      <button *ngIf="hasResults" class="repeat-btn" (click)="repeatProcess()">Repetir</button>
+    </div>
+  </div>
+  
