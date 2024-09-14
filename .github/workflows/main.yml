@@ -24,7 +24,10 @@ jobs:
         run: CI=false npm run build
 
       - name: Check build directory
-        run: ls -la build
+        run: |
+          echo "Checking build directory..."
+          ls -la
+          ls -la build
 
       - name: Transfer Build Folder to EC2 Instance
         uses: easingthemes/ssh-deploy@v2.1.4
