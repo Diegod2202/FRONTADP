@@ -24,7 +24,7 @@ sendDescription() {
   // this.http.post('http:', body).subscribe((response: any) => {
   //   this.textoDevuelto = response.texto;
   //   this.imagenDevuelta = response.imagen;
-  //   this.loading = false; 
+      this.loading = false; 
       this.hasResults = true; 
 
   // });
