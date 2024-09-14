@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "Checking build directory..."
           ls -la
-          ls -la build
+          ls -la dist/front-arq
 
       - name: Transfer Build Folder to EC2 Instance
         uses: easingthemes/ssh-deploy@v2.1.4
@@ -36,5 +36,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           REMOTE_PORT: ${{ secrets.DEPLOY_PORT }}
-          SOURCE: "build/"
+          SOURCE: "dist/front-arq/"
           TARGET: ${{ secrets.DEPLOY_TARGET }}
